@@ -64,17 +64,17 @@ def cifar_iid(dataset, num_users):
 
 
 if __name__ == '__main__':
-    #dataset_train = datasets.MNIST('./data/mnist/', train=True, download=True,
-                                   #transform=transforms.Compose([
-                                    #   transforms.ToTensor(),
-                                     #  transforms.Normalize((0.1307,), (0.3081,))
-                                  # ]))
-    #num = 100
-    #d = mnist_noniid(dataset_train, num)
-    dataset_train = datasets.CIFAR10('./data/cifar/', train=True, download=True,
+    dataset_train = datasets.MNIST('./data/mnist/', train=True, download=True,
                                    transform=transforms.Compose([
-                                       transforms.ToTensor(),
-                                       transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-                                   ]))
+                                      transforms.ToTensor(),
+                                      transforms.Normalize((0.1307,), (0.3081,))
+                                  ]))
     num = 100
-    d = cifar_iid(dataset_train, num)
+    d = mnist_noniid(dataset_train, num)
+    # dataset_train = datasets.CIFAR10('./data/cifar/', train=True, download=True,
+    #                                transform=transforms.Compose([
+    #                                    transforms.ToTensor(),
+    #                                    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    #                                ]))
+    # num = 100
+    # d = cifar_iid(dataset_train, num)
